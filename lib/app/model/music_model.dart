@@ -23,4 +23,15 @@ class MusicModel {
         explicit: map["explicit"],
         trackRating: map["track_rating"]);
   }
+
+  static Map<String, dynamic> toMap(MusicModel model) {
+    return {
+      "track_id": model.trackId,
+      "track_name": model.trackName,
+      "album_name": model.albumName,
+      "artist_name": model.artistName,
+      "explicit": model.explicit,
+      "track_rating": model.trackRating
+    };
+  }
 }

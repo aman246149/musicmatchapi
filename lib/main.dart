@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:practice/app/view/bloc/apibloc/api_bloc.dart';
+import 'package:practice/app/view/bloc/bookmarks/bookmarks_bloc.dart';
 import 'package:practice/app/view/bloc/lyricsBlocs/bloc/lyrics_bloc.dart';
 import 'package:practice/app/view/bloc/tracksbloc/tracks_bloc.dart';
 import 'package:practice/app/view/pages/homepage.dart';
@@ -20,11 +21,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => ApiBloc()..add(FetchApiEvent()),
         ),
-        BlocProvider(
-          create: (context) => TracksBloc()),
-        BlocProvider(
-          create: (context) => LyricsBloc()),
-        
+        BlocProvider(create: (context) => TracksBloc()),
+        BlocProvider(create: (context) => LyricsBloc()),
+        BlocProvider(create: (context) => BookmarksBloc()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:practice/app/view/bloc/bookmarks/bookmarks_bloc.dart';
 import 'package:practice/app/view/bloc/lyricsBlocs/bloc/lyrics_bloc.dart';
+import 'package:practice/app/view/pages/book_marks.dart';
 import 'package:practice/app/view/pages/details_page.dart';
 
 import '../bloc/apibloc/api_bloc.dart';
@@ -20,6 +22,12 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: Text("Trending"),
           centerTitle: true,
+          leading: IconButton(
+              onPressed: () {
+                BlocProvider.of<BookmarksBloc>(context).add(FetchFavourite());
+                Navigator.push(context, MaterialPageRoute(builder: (context) => BookMarks(),));
+              },
+              icon: const Icon(Icons.bookmark)),
         ),
         body: BlocConsumer<ApiBloc, ApiState>(
           listener: (context, state) {},
