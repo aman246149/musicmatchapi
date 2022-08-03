@@ -8,3 +8,7 @@
 - sharedPreferences- to store data in localDatabase
 
 
+# Project Video
+
+https://user-images.githubusercontent.com/53884276/182634365-e0c88242-6eb1-432c-a022-bc2c2e456207.mp4
+
