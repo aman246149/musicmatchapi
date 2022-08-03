@@ -5,6 +5,9 @@ import 'package:practice/app/view/bloc/bookmarks/bookmarks_bloc.dart';
 import 'package:practice/app/view/bloc/lyricsBlocs/bloc/lyrics_bloc.dart';
 import 'package:practice/app/view/bloc/tracksbloc/tracks_bloc.dart';
 import 'package:practice/app/view/pages/homepage.dart';
+import 'package:practice/app/view/pages/internet_checking_page.dart';
+
+import 'app/view/bloc/InternetBloc/internet_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,6 +27,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => TracksBloc()),
         BlocProvider(create: (context) => LyricsBloc()),
         BlocProvider(create: (context) => BookmarksBloc()),
+        BlocProvider(
+          create: (_) => ConnectedBloc(),
+        )
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
@@ -31,7 +37,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           primarySwatch: Colors.blue,
         ),
-        home: const HomePage(),
+        home: InterNetCheckingPage(),
       ),
     );
   }
